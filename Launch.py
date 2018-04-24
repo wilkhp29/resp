@@ -39,8 +39,8 @@ call(["service","lirc","start"])
 
 
 def controlarTv(action):
-    casa_ref.child("tv").child("action").remove()
-    print(action)
+        casa_ref.child("tv").child("action").remove()
+        print(action)
         if(action == "power"):
             call(["irsend", "SEND_ONCE", "tv", "KEY_POWER"])
         if (action == "input"):
@@ -81,9 +81,9 @@ def controlarAr(action):
 
 def stream_handler(mensagem):
         if(len(mensagem["path"]) > 3):
-            caminho = mensagem["path"].split('/')   / -K7yGTTEp7O549EzTYtI
+            caminho = mensagem["path"].split('/')
             if(caminho[3] == 'comodos'):
-                controle(mensagem["data"],caminho[4])   {'title': 'Pyrebase', " body ":" etc ... "}
+                controle(mensagem["data"],caminho[4])
             if(caminho[3] == "controle"):
                     acao = mensagem["data"]
                     if(caminho[4] == "tv"):
@@ -165,7 +165,6 @@ def controle(status,area):
             GPIO.output(pin, GPIO.HIGH)
 
 def getMAC(interface='eth0'):
-   Return the MAC address of the specified interface
   try:
     str = open('/sys/class/net/%s/address' %interface).read()
   except:
